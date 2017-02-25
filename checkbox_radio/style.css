@@ -1,0 +1,97 @@
+input {
+    display: none;
+}
+
+.background input[type="checkbox"] + label,
+.background input[type="radio"] + label {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("bg.png");
+    background-repeat: no-repeat;
+}
+
+/* background sprite */
+.bg-checkbox + label {
+    background-position: -25px -32px;
+}
+
+.bg-radio + label {
+    background-position: -24px -10px;
+}
+
+.bg-checkbox:checked + label {
+    background-position: -60px -31px;
+}
+
+.bg-radio:checked + label {
+    background-position: -59px -10px;
+}
+
+/* pseudo element */
+
+.pseudo-element input[type="checkbox"] + label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+
+.pseudo-element input[type="radio"] + label {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+}
+
+.pseudo-checkbox + label,
+.pseudo-radio + label {
+    position: relative;
+    border: 1px solid #d9d9d9;
+}
+
+.pseudo-checkbox:checked + label,
+.pseudo-radio:checked + label {
+    border-color: #d73d32;
+}
+
+.pseudo-checkbox:checked + label::before,
+.pseudo-radio:checked + label::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+
+.pseudo-checkbox:checked + label::before {
+    content: '\2714';
+    text-align: center;
+    font-size: 10px;
+    color: #d73d32;
+}
+
+.pseudo-radio + label {
+    border-radius: 50%;
+}
+
+.pseudo-radio:checked + label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d73d32;
+}
+
+/* pseudo element base64 + ::before */
+
+.pseudo-checkbox-base64 + label::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAWElEQVQ4je2TsQ2AMAwED4jEKJ4NBoIik3kUXkRQEBoqLBqKXOPqztXDRzoAd1+AKeiuZjZTA0f08+30UfFJC7TAPwIJQFKO7kFShrrGBAMwct03FGDboZyDlxrN2Y7oWwAAAABJRU5ErkJggg==) no-repeat;
+}
+
+.pseudo-checkbox-base64:checked + label::before {
+    content: '';
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA3klEQVQ4jb3TrU4DQRiF4QdYggTDRawdPyEhCAwSg0Hyo7gPBARRRD0JEgd6/QrM0BtAoLAstItgSBpoNywkHDPizPvOT/LxxyxAimGAo57sZVnVx7Kg7XvyJ7PYF/ya/xOkGHZTDKu/EqQYDnGNuxTD8nRXzNi8jx3slVXdZHiQ66uyql/nClIMazjFOm5SDLc4y/VJWdUXnU8oq/oZW3jCNs674G+CLLnHBh7RdsEzBVnygE0cdMHM+MQpyQijLnjuDfqkgGbSDvvOQzNph+RpLFjCio/1Jxnj5Y3xO0btSLveVPEAAAAAAElFTkSuQmCC) no-repeat;
+}

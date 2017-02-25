@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义checkbox， radio样式</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="background">
+    <h2>背景雪碧图</h2>
+
+    <input type="checkbox" id="example1" name="example1" class="bg-checkbox"/>
+    <label for="example1"></label>
+    <br/>
+    <input type="radio" id="example2" name="example2" class="bg-radio" checked/>
+    <label for="example2"></label>
+    <input type="radio" id="example2-1" name="example2" class="bg-radio"/>
+    <label for="example2-1"></label>
+
+</div>
+<div class="pseudo-element">
+    <h2>伪元素</h2>
+
+    <input type="checkbox" id="example3" name="example3" class="pseudo-checkbox"/>
+    <label for="example3"></label>
+    <br/>
+    <input type="radio" id="example4" name="example4" class="pseudo-radio" checked/>
+    <label for="example4"></label>
+    <input type="radio" id="example4-1" name="example4" class="pseudo-radio"/>
+    <label for="example4-1"></label>
+</div>
+
+<div class="pseudo-element-base64">
+    <h2>checkbox 伪元素 base64 + ::before</h2>
+
+    <input type="checkbox" id="example3-base64" name="example3-base64" class="pseudo-checkbox-base64"/>
+    <label for="example3-base64"></label>
+
+    <input type="radio" id="example4-base64" name="example4-base64" class="pseudo-radio-base64"/>
+    <label for="example4-base64"></label>
+</div>
+</body>
+</html>

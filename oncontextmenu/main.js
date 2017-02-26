@@ -22,6 +22,7 @@ document.addEventListener("contextmenu", function (event) {
 
     // console.log(event.clientX, event.clientY);
     // console.log('right click');
+    // console.log(window.innerWidth, window.innerHeight);
 
     event.preventDefault();
     menu.classList.remove("hidden");
@@ -29,21 +30,25 @@ document.addEventListener("contextmenu", function (event) {
 
     var mouseX = event.clientX, // 鼠标X坐标
         mouseY = event.clientY, // 鼠标Y坐标
-        winWidth = window.innerWidth, // 窗口宽度
-        winHeight = window.innerHeight, // 窗口高度
+        // winWidth = window.innerWidth, // 窗口宽度
+        // winHeight = window.innerHeight, // 窗口高度
         eleWidth = parseInt(getStyle(menu, "width")), // 菜单宽度
         eleHeight = parseInt(getStyle(menu, "height")); // 菜单高度
 
-    if ((mouseX > winWidth - eleWidth) &&
-        (mouseY > winWidth - eleHeight)) {
+    //    右下角
+    if ((mouseX > window.innerWidth - eleWidth) &&
+        (mouseY > window.innerHeight - eleHeight)) {
         menu.style.left = mouseX - eleWidth + 'px';
         menu.style.top = mouseY - eleHeight + 'px';
-    } else if (mouseX > winWidth - eleWidth) {
+    //    右边
+    } else if (mouseX > window.innerWidth - eleWidth) {
         menu.style.left = mouseX - eleWidth + 'px';
         menu.style.top = mouseY + 'px';
-    } else if (mouseY > winHeight - eleHeight) {
+    //    下边
+    } else if (mouseY > window.innerHeight - eleHeight) {
         menu.style.left = mouseX + 'px';
         menu.style.top = mouseY - eleHeight + 'px';
+    //    其余情况
     } else {
         menu.style.left = mouseX + 'px';
         menu.style.top = mouseY + 'px';

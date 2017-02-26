@@ -14,7 +14,7 @@ ul, li, ol {
     height: 100%;
     min-height: 20px;
     padding: 10px 20px;
-    margin-bottom: 20px;
+    margin: 20px;
     border-radius: 3px;
     border: 1px solid #e3e3e3;
     font-size: 18px;

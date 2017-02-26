@@ -55,7 +55,7 @@ document.addEventListener("contextmenu", function (event) {
 });
 // 点击空白区域 隐藏菜单
 document.addEventListener("click", function () {
-    console.log('remove');
+    // console.log('remove');
     menu.classList.add("hidden");
 });
 

@@ -64,5 +64,4 @@ document.addEventListener("click", function () {
     menu.classList.add("hidden");
 });
 
-
 // console.log(window.innerWidth, window.innerHeight);

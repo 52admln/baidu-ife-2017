@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式之入门</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css">
+    <style>
+        body {
+            padding:40px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <label class="label">判断给定数字是否为手机号码</label>
+    <p class="control">
+        <input class="input" id="telephone" type="text" placeholder="输入手机号码">
+    </p>
+    <p class="control">
+        <button class="button is-primary js-button-tel">校验</button>
+    </p>
+    <div class="notification hidden js-notice-tel">
+
+    </div>
+
+    <label class="label">判断输入的字符串是否有相邻重复单词</label>
+    <p class="control">
+        <input class="input" id="letter" type="text" placeholder="输入字符串">
+    </p>
+    </p>
+    <p class="control">
+        <button class="button is-primary js-button-letter">校验</button>
+    </p>
+    <div class="notification hidden js-notice-letter">
+
+    </div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

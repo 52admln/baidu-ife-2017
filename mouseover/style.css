@@ -4,6 +4,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 20px;
     height: 100vh;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +21,7 @@ a {
     height: 312px;
     padding: 20px;
     background: url("./bg.png") no-repeat;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +49,7 @@ a {
     position: absolute;
     text-align: center;
     z-index: 1;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +73,37 @@ a {
     /* 将背景拉长至200% */
     background-image: -webkit-linear-gradient(left, #97e4e6, #ffe154 25%, #97e4e6 50%, #ffe154 75%, #97e4e6 100%);
     background-size: 200% 100%;
+}
+
+@-webkit-keyframes textGradient {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -100% 0;
+    }
+}
+
+@-webkit-keyframes textBreathe {
+    0% {
+        color: #3498db
+    }
+
+    25% {
+        color: #d71345
+    }
+
+    50% {
+        color: #f7acbc
+    }
+
+    75% {
+        color: #d71345
+    }
+
+    0% {
+        color: #3498db
+    }
 }
 
 @keyframes textGradient {
@@ -111,12 +145,11 @@ a {
 
 }
 .container:hover .text h2 {
+    -webkit-animation: textGradient 3s linear infinite;
     animation: textGradient 3s linear infinite;
 }
 .container:hover .text a {
     -webkit-animation: textBreathe 5s infinite linear;
-    -moz-animation: textBreathe 5s infinite linear;
-    -o-animation: textBreathe 5s infinite linear;
     animation: textBreathe 5s infinite linear
 }
 

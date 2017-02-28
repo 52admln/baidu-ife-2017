@@ -64,7 +64,45 @@
     transform: scale3d(0.02,1,1); /* Standard syntax */
 ```
 
+4. 文字流光效果
 
+大标题文字
 
+以“-webkit-background-clip:text;-webkit-text-fill-color:transparent;”来进行文字镂空（前者裁剪掉文字内容之外的背景，后者将文字填充色设为透明），
+以“background-image:-webkit-linear-gradient()”来实现背景颜色渐变，最后使用@keyframes来进行背景平移的无限循环以模仿流动。
 
-参考资料: http://www.jianshu.com/p/c67f73ad2573
+一是必须设置平移速度为匀速（linear）；还有就是在结束和开始那一瞬间，背景颜色渐变的样式相同，
+对此，可以通过设置颜色渐变为“0% x色”-“25% y色”-“50% x色”-“75% y色”-“100% x色”，在将背景拉长至200%来实现。
+
+小标题链接
+
+需要进行颜色的不断切换,使用 keyframe 和 animation 进行颜色更改
+
+```
+@keyframes textBreathe {
+    0% {
+        color: #3498db
+    }
+
+    25% {
+        color: #d71345
+    }
+
+    50% {
+        color: #f7acbc
+    }
+
+    75% {
+        color: #d71345
+    }
+
+    0% {
+        color: #3498db
+    }
+}
+```
+
+参考资料:
+http://www.jianshu.com/p/c67f73ad2573
+https://tympanus.net/codrops/2016/01/06/inspiration-for-line-menu-styles/
+http://www.w3cplus.com/content/css3-background-clip

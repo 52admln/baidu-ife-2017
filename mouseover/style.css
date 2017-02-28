@@ -57,15 +57,67 @@ a {
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
     opacity: 0;
-    /*top:15px*/
+    /* top:15px */
     transform: translate(0, 20px);
+
+}
+.text h2 {
+    /* 文字镂空,用背景填充 */
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* 设置颜色渐变为“0% x色”-“25% y色”-“50% x色”-“75% y色”-“100% x色”，*/
+    /* 将背景拉长至200% */
+    background-image: -webkit-linear-gradient(left, #97e4e6, #ffe154 25%, #97e4e6 50%, #ffe154 75%, #97e4e6 100%);
+    background-size: 200% 100%;
+}
+
+@keyframes textGradient {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -100% 0;
+    }
+}
+
+@keyframes textBreathe {
+    0% {
+        color: #3498db
+    }
+
+    25% {
+        color: #d71345
+    }
+
+    50% {
+        color: #f7acbc
+    }
+
+    75% {
+        color: #d71345
+    }
+
+    0% {
+        color: #3498db
+    }
 }
 
 .container:hover .text h2,
 .container:hover .text a {
-    /*top: 0;*/
+    /* top: 0; */
     transform: translate(0, 0);
     opacity: 1;
+
+}
+.container:hover .text h2 {
+    animation: textGradient 3s linear infinite;
+}
+.container:hover .text a {
+    -webkit-animation: textBreathe 5s infinite linear;
+    -moz-animation: textBreathe 5s infinite linear;
+    -o-animation: textBreathe 5s infinite linear;
+    animation: textBreathe 5s infinite linear
 }
 
 .inner {
@@ -93,8 +145,9 @@ a {
     transition: transform 0.4s, opacity 0.3s;
     -webkit-transition-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
     transition-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95); /*贝塞尔曲线*/
-    opacity:0;
+    opacity: 0;
 }
+
 /*左右线条*/
 .border-left-right::before,
 .border-left-right::after {
@@ -104,10 +157,12 @@ a {
     -webkit-transform: scale3d(0.1, 0, 1);
     transform: scale3d(0.1, 0, 1);
 }
+
 /*左线条*/
 .border-left-right::before {
     left: 0;
 }
+
 /*右线条*/
 .border-left-right::after {
     right: 0;
@@ -136,5 +191,5 @@ a {
 .container:hover .border-top-bottom::after {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
-    opacity:1;
+    opacity: 1;
 }

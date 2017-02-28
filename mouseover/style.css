@@ -1,0 +1,140 @@
+body {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    width: 492px;
+    height: 312px;
+    padding: 20px;
+    background: url("./bg.png") no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 用了padding 后需要加这个来限制*/
+    box-sizing: border-box;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: filter 0.3s linear;
+    transition: filter 0.3s linear;
+    background: url("./bg.png") no-repeat;
+}
+
+.container:hover::before {
+    filter: blur(5px);
+}
+
+.text {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text a, .text h2 {
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    opacity: 0;
+    /*top:15px*/
+    transform: translate(0, 20px);
+}
+
+.container:hover .text h2,
+.container:hover .text a {
+    /*top: 0;*/
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+}
+
+.border-left-right,
+.border-left-right,
+.border-top-bottom,
+.border-top-bottom {
+    position: relative;
+    /* 使高度互相平齐 */
+    height: 100%;
+}
+
+.border-left-right::before,
+.border-left-right::after,
+.border-top-bottom::before,
+.border-top-bottom::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.3s;
+    transition: transform 0.4s, opacity 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
+    transition-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95); /*贝塞尔曲线*/
+    opacity:0;
+}
+/*左右线条*/
+.border-left-right::before,
+.border-left-right::after {
+    width: 2px;
+    height: 100%;
+    top: 0;
+    -webkit-transform: scale3d(0.1, 0, 1);
+    transform: scale3d(0.1, 0, 1);
+}
+/*左线条*/
+.border-left-right::before {
+    left: 0;
+}
+/*右线条*/
+.border-left-right::after {
+    right: 0;
+}
+
+.border-top-bottom::before,
+.border-top-bottom::after {
+    width: 100%;
+    height: 2px;
+    left: 0;
+    -webkit-transform: scale3d(0, 0.1, 1);
+    transform: scale3d(0, 0.1, 1);
+}
+
+.border-top-bottom::before {
+    top: 0;
+}
+
+.border-top-bottom::after {
+    bottom: 0;
+}
+
+.container:hover .border-left-right::before,
+.container:hover .border-left-right::after,
+.container:hover .border-top-bottom::before,
+.container:hover .border-top-bottom::after {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    opacity:1;
+}
